@@ -8,9 +8,20 @@ function* addToReserve({ id }) {
     state => state.reserve.find(trip => trip.id === id)
   )
 
-  if (tripExists) {
+  const myStock = yield call(api.get, `/stock/${id}`);
 
-    const amount = tripExists.amount + 1;
+  const stockAmount = myStock.data.amount;
+
+  const currentStock = tripExists ? tripExists.amount : 0;
+
+  const amount = currentStock + 1;
+
+  if (amount > stockAmount) {
+    alert('Quantidade máxima atingida.');
+    return;
+  }
+
+  if (tripExists) {
 
     yield put(updateAmountReserve(id, amount))
 
