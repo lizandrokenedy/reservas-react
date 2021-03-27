@@ -2,7 +2,7 @@
 
 Projeto criado com base no curso: [React Js do zero ao avançado na pratica](https://www.udemy.com/course/curso-reactjs/)
 
-Finalidade: Gerar solicitação de reservas de pacote de viagens.
+Finalidade: Gerar solicitações de reservas de viagens.
 Bibliotécas utilizadas:
 
 * axios: ^0.21.1
